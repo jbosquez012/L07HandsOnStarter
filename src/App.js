@@ -1,11 +1,22 @@
-import React from "react";
-import "./style.css";
-
-export default function App() {
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
+import About from "./components/about";
+import Home from "./components/Home";
+import Contact from "./components/contact";
+import "./App.css";
+import User from "./components/User";
+ 
+function App() {
   return (
-    <div>
-      <h1>Lesson 7 HandsOn</h1>
-      <p>Start editing to see some magic happen :)</p>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="user/*" element={<User />} />
+      </Routes>
     </div>
   );
 }
+ 
+export default App;
